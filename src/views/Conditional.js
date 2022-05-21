@@ -11,10 +11,10 @@ function ConditionalComp() {
       <FNCCR.TabularView />
       <FNCCR.Login />
       <FNCCR.Modal />
+      <FNCCR.InsGenerator />
       <FNCCR.FruitSaladOne />
       <FNCCR.FruitSaladTwo />
       <FNCCR.FruitSaladThree />
-      <FNCCR.InsGenerator />
       <FNCCR.PortfolioComponents />
     </div>
   );

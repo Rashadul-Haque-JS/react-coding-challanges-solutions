@@ -249,14 +249,14 @@ export const Modal = () => {
       <h1 style={{ textDecoration: "underline", fontSize: "1.8rem" }}>Modal</h1>
       {modal && (
         <div style={{ padding: "24px", position: "absolute", top: "12px" }}>
-          <p>Hi, I am Modal</p>
+          <p style={{color: "green", textAlign: "center",padding:'8px 0px', fontWeight:'bold' }}>Hi, I am Modal</p>
           {modal && (
             <button
               className={style.btn}
-              style={{ backgroundColor: "red", padding: "0px 8px" }}
+              style={{ backgroundColor: "red", padding: "0px 16px", color:"#fff" }}
               onClick={showModal}
             >
-              Hide Modal
+              Hide
             </button>
           )}
         </div>
@@ -311,7 +311,7 @@ export const FruitSaladOne = () => {
       <p style={{ textAlign: "center", color: "blue" }}>
         Click on fruit to get the same in second array.
       </p>
-      <ol style={{marginBottom:'32px'}}>
+      <ol style={{paddingBottom:'150px'}}>
         {arr2.map((fruit, index) => {
           return <li key={index}>{fruit}</li>;
         })}
@@ -362,7 +362,7 @@ export const FruitSaladTwo = () => {
       <p style={{ textAlign: "center", color: "blue" }}>
         Click on fruit to transfer the same to second array.
       </p>
-      <ol style={{marginBottom :'32px'}}>
+      <ol style={{paddingBottom:'150px'}}>
         {arr2.map((fruit, index) => {
           return (
             <li key={index} style={{ color: "green" }}>
@@ -423,7 +423,7 @@ export const FruitSaladThree = () => {
       <p style={{ textAlign: "center", color: "blue" }}>
         Click on fruit to get the same in second array.
       </p>
-      <ul>
+      <ul style={{paddingBottom:'150px'}}>
         {Object.keys(object).map((fruit, index) => {
           return (
             <li key={index}>
