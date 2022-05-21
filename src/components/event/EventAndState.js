@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from "../module/index.module.css";
+import style from "../../module/index.module.css";
 
 export const InputDuplication = () => {
   const [text, setVal] = useState("");

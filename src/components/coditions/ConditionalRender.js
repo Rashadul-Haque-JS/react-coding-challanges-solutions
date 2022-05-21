@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import style from "../module/index.module.css";
-import box from "../assets/image/box.png";
+import style from "../../module/index.module.css";
+import box from "../../assets/image/box.png";
+import insultText from "../../assets/files/Shakespear.txt";
+import {TabularCompView} from './Portfolio'
 
+// -------------------------------------------------------
 export const ToggleSwitch = () => {
   const [text, setText] = useState("ON");
 
@@ -45,6 +48,7 @@ export const FruitsList = () => {
   );
 };
 
+// -------------------------------------------------------
 export const DevDiscover = () => {
   const [index, setIndex] = useState(null);
   const [isTrue, setIsTrue] = useState(true);
@@ -89,6 +93,8 @@ export const DevDiscover = () => {
   );
 };
 
+// ----------------------------------------------------
+
 export const TabularView = () => {
   const [secOne, setOne] = useState(false);
   const [secTwo, setTwo] = useState(false);
@@ -119,7 +125,7 @@ export const TabularView = () => {
       </h1>
       {secOne && (
         <div className={style.sectionIntro}>
-          <h3 style={{ color: "#fa2a55" }}>Hello From Section - 1</h3>
+          <h3 style={{textAlign:'center', color: "#fa2a55" }}>Hello From Section - 1</h3>
           <p style={{ color: "blue" }}>
             Lorem inventore veritatis et quasi architecto beatae vitae dicta
             sunt explicabo.
@@ -129,7 +135,7 @@ export const TabularView = () => {
 
       {secTwo && (
         <div className={style.sectionIntro}>
-          <h3 style={{ color: "green" }}>Hello From Section - 2</h3>
+          <h3 style={{textAlign:'center', color: "green" }}>Hello From Section - 2</h3>
           <p style={{ color: "#fa2a55" }}>
             Lorem inventore veritatis et quasi architecto beatae vitae dicta
             sunt explicabo.
@@ -139,7 +145,7 @@ export const TabularView = () => {
 
       {secThree && (
         <div className={style.sectionIntro}>
-          <h3 style={{ color: "blue" }}>Hello From Section - 3</h3>
+          <h3 style={{textAlign:'center', color: "blue" }}>Hello From Section - 3</h3>
           <p style={{ color: "green" }}>
             Lorem inventore veritatis et quasi architecto beatae vitae dicta
             sunt explicabo.
@@ -176,7 +182,7 @@ export const TabularView = () => {
   );
 };
 
-// FAKED LOGIN
+// FAKED LOGIN-------------------------------------------
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -230,7 +236,7 @@ export const Login = () => {
   );
 };
 
-// Modal
+// Modal------------------------------------------------
 export const Modal = () => {
   const [modal, setModal] = useState(false);
 
@@ -268,6 +274,7 @@ export const Modal = () => {
   );
 };
 
+//Fruit salad one ----------------------------------------------
 export const FruitSaladOne = () => {
   const [arr1, setArr1] = useState([
     "Apple",
@@ -304,7 +311,7 @@ export const FruitSaladOne = () => {
       <p style={{ textAlign: "center", color: "blue" }}>
         Click on fruit to get the same in second array.
       </p>
-      <ol>
+      <ol style={{marginBottom:'32px'}}>
         {arr2.map((fruit, index) => {
           return <li key={index}>{fruit}</li>;
         })}
@@ -313,6 +320,7 @@ export const FruitSaladOne = () => {
   );
 };
 
+//Fruit salad two ----------------------------------------------
 export const FruitSaladTwo = () => {
   const [arr1, setArr1] = useState([
     "Apple",
@@ -325,7 +333,6 @@ export const FruitSaladTwo = () => {
 
   function arrayHandeler(index) {
     const newFruit = arr1.splice(index, 1);
-    console.log("new", newFruit);
     setArr2([...arr2, newFruit]);
   }
 
@@ -355,7 +362,7 @@ export const FruitSaladTwo = () => {
       <p style={{ textAlign: "center", color: "blue" }}>
         Click on fruit to transfer the same to second array.
       </p>
-      <ol>
+      <ol style={{marginBottom :'32px'}}>
         {arr2.map((fruit, index) => {
           return (
             <li key={index} style={{ color: "green" }}>
@@ -368,6 +375,7 @@ export const FruitSaladTwo = () => {
   );
 };
 
+// Fruit salad three ----------------------------------------------
 export const FruitSaladThree = () => {
   const [arr1, setArr1] = useState([
     "Apple",
@@ -427,3 +435,105 @@ export const FruitSaladThree = () => {
     </div>
   );
 };
+
+// Ins generator------------------------------------
+
+export const InsGenerator = () => {
+  const [insults, setInsults] = useState([]);
+  const [insultList, setInsultList] = useState([]);
+  const [insultObject, setObject] = useState("");
+  const [btnTxt, setBtnTxt] = useState("Set it up");
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(insultText);
+      const data = await response.text();
+      const textArray = data.split("\n");
+      setInsults(textArray);
+    }
+    fetchData();
+    setupArrOfObj();
+  }, []);
+
+  const insultRandomise = () => {
+    try {
+      let number = insultList.length;
+      const random = Math.floor(Math.random() * number);
+      let newArr = [];
+      insults.forEach((ins) => {
+        let ob = {};
+        const [insult, play] = ins.split("-");
+        ob.insult = insult;
+        ob.play = play;
+        newArr.push(ob);
+      });
+
+      if (!number == 0) {
+        setObject(insultList[random]);
+        insultList.splice(insultList.indexOf(insultObject), 1);
+        setInsultList(insultList);
+      } else {
+        setupArrOfObj();
+      }
+
+      setBtnTxt("Go...");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const setupArrOfObj = () => {
+    let newArr = [];
+    insults.forEach((ins) => {
+      let ob = {};
+      const [insult, play] = ins.split("-");
+      ob.insult = insult;
+      ob.play = play;
+      newArr.push(ob);
+    });
+    setInsultList(newArr);
+  };
+
+  return (
+    <div className={style.container}>
+      <h1
+        style={{
+          textDecoration: "underline",
+          fontSize: "1.8rem",
+          textAlign: "center",
+        }}
+      >
+        Shakespeare's Insult Generator{" "}
+        <span style={{ color: "#F54C7F" }}>({insultList.length})</span> Left
+      </h1>
+      <p style={{ textAlign: "center" }}>
+        <span style={{ color: "yellow", fontWeight: "bold" }}>
+          {insultObject.insult}
+        </span>{" "}
+        {insultObject && <span>in the play</span>}
+        <span style={{ color: "#0C7D74", fontWeight: "bold" }}>
+          {insultObject.play}
+        </span>
+      </p>
+      <button
+        className={style.btn}
+        style={{
+          margin: "8px 0px",
+          cursor: "pointer",
+          background: btnTxt == "Set it up" ? "yellow" : "green",
+        }}
+        onClick={insultRandomise}
+      >
+        {btnTxt}
+      </button>
+    </div>
+  );
+};
+
+// Compponent portfolio
+
+export const PortfolioComponents = () => {
+  return (
+    <TabularCompView/>
+  )
+}

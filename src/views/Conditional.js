@@ -1,17 +1,10 @@
 import style from "../module/index.module.css";
-import * as FNCE from "../components/EventAndState";
-
 // Functional Components Conditional Rendering
-import * as FNCCR from "../components/ConditionalRender";
+import * as FNCCR from "../components/coditions/ConditionalRender";
 
-function MultiViews() {
+function ConditionalComp() {
   return (
     <div className={style.MultiComp}>
-      <FNCE.BtnBasic />
-      <FNCE.Counter />
-      <FNCE.DiceRoller />
-      <FNCE.InputDuplication />
-      <FNCE.SubmitPrevention />
       <FNCCR.ToggleSwitch />
       <FNCCR.FruitsList />
       <FNCCR.DevDiscover />
@@ -21,8 +14,10 @@ function MultiViews() {
       <FNCCR.FruitSaladOne />
       <FNCCR.FruitSaladTwo />
       <FNCCR.FruitSaladThree />
+      <FNCCR.InsGenerator />
+      <FNCCR.PortfolioComponents />
     </div>
   );
 }
 
-export default MultiViews;
+export default ConditionalComp;

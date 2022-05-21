@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import style from "./module/index.module.css";
-import MultiViews from "./views/MultiViiews";
-import Navigation from "./components/Navigation"
+import Event from "./views/EventState";
+import Conditional from "./views/Conditional";
+import Navigation from "./components/Navigation";
 
 // import Card from "./components/ProductKort"
 import Products from "./views/ProductList";
@@ -14,7 +15,8 @@ function App() {
           <Navigation />
         </header>
         <Routes>
-          <Route path="/" element={<MultiViews />} />
+          <Route path="/" element={<Event />} />
+          <Route path="/conditional" element={<Conditional />} />
           <Route path="/products" element={<Products />} />
         </Routes>
       </BrowserRouter>

@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import style from "../module/index.module.css";
+import style from "../../module/index.module.css";
 const Card = ({product} ) => {
     const [highlight, setLight] = useState(false)
     const flash = () => {

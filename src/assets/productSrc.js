@@ -1,3 +1,6 @@
+
+import lime from './image/lime.png'
+import gold from './image/gold.png'
 export const productArray = [
     {
       productId: 1000,
@@ -38,7 +41,7 @@ export const productArray = [
     {
       productId: 1047,
       productName: 'old lime Elvera',
-      productImage: 'https://picsum.photos/400?image=761',
+      productImage: lime,
       productStock: 4,
       productPrice: '30869.36',
       productSalePrice: '30869.36',
@@ -65,7 +68,7 @@ export const productArray = [
     {
       productId: 1068,
       productName: 'primary gold Tera',
-      productImage: 'https://picsum.photos/400?image=463',
+      productImage: gold,
       productStock: 88,
       productPrice: '25121.63',
       productSalePrice: '25121.63',
