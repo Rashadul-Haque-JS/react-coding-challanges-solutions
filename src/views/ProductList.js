@@ -1,6 +1,6 @@
 
 import { productArray } from '../assets/productSrc'
-import Product from '../components/compAndProps/Products'
+import Product from '../components/props/Products'
 const Products = () => {
 
     return(

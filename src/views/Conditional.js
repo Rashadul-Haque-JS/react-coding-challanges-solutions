@@ -1,6 +1,6 @@
 import style from "../module/index.module.css";
 // Functional Components Conditional Rendering
-import * as FNCCR from "../components/coditions/ConditionalRender";
+import * as FNCCR from "../components/conditions/ConditionalRender";
 
 function ConditionalComp() {
   return (
