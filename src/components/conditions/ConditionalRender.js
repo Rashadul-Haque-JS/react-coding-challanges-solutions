@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import style from "../../module/index.module.css";
 import box from "../../assets/image/box.png";
 import insultText from "../../assets/files/Shakespear.txt";
-import {TabularCompView} from './Portfolio'
+import { TabularCompView } from "./Portfolio";
 
 // -------------------------------------------------------
 export const ToggleSwitch = () => {
@@ -125,7 +125,9 @@ export const TabularView = () => {
       </h1>
       {secOne && (
         <div className={style.sectionIntro}>
-          <h3 style={{textAlign:'center', color: "#fa2a55" }}>Hello From Section - 1</h3>
+          <h3 style={{ textAlign: "center", color: "#fa2a55" }}>
+            Hello From Section - 1
+          </h3>
           <p style={{ color: "blue" }}>
             Lorem inventore veritatis et quasi architecto beatae vitae dicta
             sunt explicabo.
@@ -135,7 +137,9 @@ export const TabularView = () => {
 
       {secTwo && (
         <div className={style.sectionIntro}>
-          <h3 style={{textAlign:'center', color: "green" }}>Hello From Section - 2</h3>
+          <h3 style={{ textAlign: "center", color: "green" }}>
+            Hello From Section - 2
+          </h3>
           <p style={{ color: "#fa2a55" }}>
             Lorem inventore veritatis et quasi architecto beatae vitae dicta
             sunt explicabo.
@@ -145,7 +149,9 @@ export const TabularView = () => {
 
       {secThree && (
         <div className={style.sectionIntro}>
-          <h3 style={{textAlign:'center', color: "blue" }}>Hello From Section - 3</h3>
+          <h3 style={{ textAlign: "center", color: "blue" }}>
+            Hello From Section - 3
+          </h3>
           <p style={{ color: "green" }}>
             Lorem inventore veritatis et quasi architecto beatae vitae dicta
             sunt explicabo.
@@ -188,7 +194,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const user = { email: "example@io.com", password: "123" };
+  const user = { email: "example@we.com", password: "123" };
 
   const login = (event) => {
     event.preventDefault();
@@ -249,11 +255,24 @@ export const Modal = () => {
       <h1 style={{ textDecoration: "underline", fontSize: "1.8rem" }}>Modal</h1>
       {modal && (
         <div style={{ padding: "24px", position: "absolute", top: "12px" }}>
-          <p style={{color: "green", textAlign: "center",padding:'8px 0px', fontWeight:'bold' }}>Hi, I am Modal</p>
+          <p
+            style={{
+              color: "green",
+              textAlign: "center",
+              padding: "8px 0px",
+              fontWeight: "bold",
+            }}
+          >
+            Hi, I am Modal
+          </p>
           {modal && (
             <button
               className={style.btn}
-              style={{ backgroundColor: "red", padding: "0px 16px", color:"#fff" }}
+              style={{
+                backgroundColor: "red",
+                padding: "0px 16px",
+                color: "#fff",
+              }}
               onClick={showModal}
             >
               Hide
@@ -311,7 +330,7 @@ export const FruitSaladOne = () => {
       <p style={{ textAlign: "center", color: "blue" }}>
         Click on fruit to get the same in second array.
       </p>
-      <ol style={{paddingBottom:'150px'}}>
+      <ol style={{ paddingBottom: "150px" }}>
         {arr2.map((fruit, index) => {
           return <li key={index}>{fruit}</li>;
         })}
@@ -362,7 +381,7 @@ export const FruitSaladTwo = () => {
       <p style={{ textAlign: "center", color: "blue" }}>
         Click on fruit to transfer the same to second array.
       </p>
-      <ol style={{paddingBottom:'150px'}}>
+      <ol style={{ paddingBottom: "150px" }}>
         {arr2.map((fruit, index) => {
           return (
             <li key={index} style={{ color: "green" }}>
@@ -423,7 +442,7 @@ export const FruitSaladThree = () => {
       <p style={{ textAlign: "center", color: "blue" }}>
         Click on fruit to get the same in second array.
       </p>
-      <ul style={{paddingBottom:'150px'}}>
+      <ul style={{ paddingBottom: "150px" }}>
         {Object.keys(object).map((fruit, index) => {
           return (
             <li key={index}>
@@ -533,7 +552,5 @@ export const InsGenerator = () => {
 // Compponent portfolio
 
 export const PortfolioComponents = () => {
-  return (
-    <TabularCompView/>
-  )
-}
+  return <TabularCompView />;
+};

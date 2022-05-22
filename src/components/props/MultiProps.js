@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import style from "../../module/index.module.css";
 import loader from "../../assets/image/preloader.gif";
-import RandomUser from "../props/RandomUser"
-import { Modal } from "./Misc";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import RandomUser from "../props/RandomUser";
+import { Modal, UserLogin } from "./Misc";
+import { toast } from "react-toastify";
 
+// Preloader----------------------------------------------
 export const Preloader = () => {
   const [isLoader, setLoader] = useState(false);
   const [msg, setMsg] = useState("");
@@ -47,6 +47,7 @@ export const Preloader = () => {
   );
 };
 
+// Modal Props------------------------------------------------------
 export const PropsModal = () => {
   const props = "Every sunrise brings oportunity to try!";
 
@@ -57,10 +58,9 @@ export const PropsModal = () => {
   );
 };
 
-// ---------------------------------------------------
+// Toastify ---------------------------------------------------
 
 export const MsgToostify = () => {
-
   const success = () => {
     toast.success("success", {
       position: "top-center",
@@ -92,39 +92,42 @@ export const MsgToostify = () => {
       </h1>
       <button
         className={style.btn}
-        style={{ margin: "8px 0px", background:'#07bc0c' }}
+        style={{ margin: "8px 0px", background: "#07bc0c" }}
         onClick={success}
       >
         Success
       </button>
       <button
         className={style.btn}
-        style={{ margin: "8px 0px", background:'#f1c40f' }}
+        style={{ margin: "8px 0px", background: "#f1c40f" }}
         onClick={warning}
       >
         Warn
       </button>
       <button
         className={style.btn}
-        style={{ margin: "8px 0px", background:'#ffffff' }}
+        style={{ margin: "8px 0px", background: "#ffffff" }}
         onClick={info}
       >
         Info
       </button>
       <button
         className={style.btn}
-        style={{ margin: "8px 0px", background:'#e74c3c' }}
+        style={{ margin: "8px 0px", background: "#e74c3c" }}
         onClick={error}
       >
         Error
       </button>
-      <ToastContainer theme="colored" toastStyle={{ backgroundColor: toast.info ?'#ffffff': ''}}/>
     </div>
   );
 };
 
-export const displayUser = () => {
-  return (
-    <RandomUser/>
-  )
-}
+// User display--------------------------------------------
+export const DisplayUser = () => {
+  return <RandomUser />;
+};
+
+// Login form----------------------------------------------
+export const LoginForm = () => {
+  return <UserLogin />;
+};

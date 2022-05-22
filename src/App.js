@@ -4,6 +4,8 @@ import Event from "./views/EventState";
 import Conditional from "./views/Conditional";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import Card from "./components/ProductKort"
 import Products from "./views/ProductList";
@@ -25,9 +27,12 @@ function App() {
           </Routes>
         </main>
 
-        <footer >
+        <footer>
           <Footer />
         </footer>
+        <ToastContainer
+          theme="colored"
+        />
       </BrowserRouter>
     </div>
   );

@@ -13,7 +13,8 @@ const CompProps = () => {
         <FNCP.Preloader />
         <FNCP.PropsModal />
         <FNCP.MsgToostify />
-        <FNCP.displayUser />
+        <FNCP.DisplayUser />
+        <FNCP.LoginForm/>
       </div>
     </div>
   );
