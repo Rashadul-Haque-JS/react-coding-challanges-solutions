@@ -7,7 +7,7 @@ const Card = ({product} ) => {
     }
 
     return (
-        <div className={style.productCard} onClick={flash} style={{ boxShadow: highlight ? '5px 5px 15px 5px #000000' : '' }} >
+        <div className={style.productCard} onClick={flash} style={{ boxShadow: highlight ? '5px 5px 15px 5px #000000' : '',cursor: "pointer" }} >
             {highlight && (
                 <p style={{ padding:'2px 4px', margin:'0px 0px 4px 0px', borderRadius:'none', color:'red',fontWeight:'bold' }} onClick={flash}>Remove Highlight</p>
             )}

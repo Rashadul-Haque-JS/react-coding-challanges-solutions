@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import style from "../../module/index.module.css";
 import { SubmitPrevention, InputDuplication } from "../event/EventAndState";
 import {
@@ -38,6 +38,17 @@ export const TabularCompView = () => {
       >
         Tabular Components View
       </h1>
+      {view > 0 && (
+        <p style={{ padding: "12px 0px", textAlign: "center" }}>
+          <span style={{ color: view == 1 ? "blue" : "#000", fontWeight:'bold' }}>1</span>{" "}
+          <span style={{ color: view == 2 ? "blue" : "#000" , fontWeight:'bold'}}>2</span>{" "}
+          <span style={{ color: view == 3 ? "blue" : "#000", fontWeight:'bold' }}>3</span>{" "}
+          <span style={{ color: view == 4 ? "blue" : "#000", fontWeight:'bold' }}>4</span>{" "}
+          <span style={{ color: view == 5 ? "blue" : "#000",fontWeight:'bold' }}>5</span>{" "}
+          <span style={{ color: view == 6 ? "blue" : "#000", fontWeight:'bold' }}>6</span>
+        </p>
+      )}
+
       {view < 1 && (
         <button
           className={style.btn}
@@ -60,6 +71,7 @@ export const TabularCompView = () => {
               margin: "0px 8px",
               padding: "0px 20px",
               backgroundColor: "#000",
+              opacity: view == 1 ? ".2" : "10",
               color: "#fff",
             }}
             onClick={displayPrev}
@@ -71,6 +83,7 @@ export const TabularCompView = () => {
             style={{
               padding: "0px 20px",
               backgroundColor: "#000",
+              opacity: view == 6 ? ".2" : "10",
               color: "#fff",
             }}
             onClick={displayNext}

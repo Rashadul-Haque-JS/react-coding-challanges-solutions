@@ -3,9 +3,11 @@ import style from "./module/index.module.css";
 import Event from "./views/EventState";
 import Conditional from "./views/Conditional";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 
 // import Card from "./components/ProductKort"
 import Products from "./views/ProductList";
+import CompProps from "./views/PropsAndComps";
 
 function App() {
   return (
@@ -14,11 +16,18 @@ function App() {
         <header className="navbar navbar-dark bg-dark">
           <Navigation />
         </header>
-        <Routes>
-          <Route path="/" element={<Event />} />
-          <Route path="/conditional" element={<Conditional />} />
-          <Route path="/products" element={<Products />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Event />} />
+            <Route path="/conditional" element={<Conditional />} />
+            <Route path="/propS" element={<CompProps />} />
+            <Route path="/products" element={<Products />} />
+          </Routes>
+        </main>
+
+        <footer >
+          <Footer />
+        </footer>
       </BrowserRouter>
     </div>
   );
