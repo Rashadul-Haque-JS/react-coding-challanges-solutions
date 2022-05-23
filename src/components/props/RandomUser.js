@@ -23,7 +23,7 @@ const RandomUser = () => {
 
     const data = await response.data.results;
     setUser(data[0]);
-    console.log(data[0]);
+
   };
 
   return (

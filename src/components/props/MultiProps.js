@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import style from "../../module/index.module.css";
 import loader from "../../assets/image/preloader.gif";
 import RandomUser from "../props/RandomUser";
-import { Modal, UserLogin } from "./Misc";
+import { Modal, UserLogin, ToostAlternative } from "./Misc";
 import { toast } from "react-toastify";
 
 // Preloader----------------------------------------------
@@ -113,7 +113,7 @@ export const MsgToostify = () => {
       </button>
       <button
         className={style.btn}
-        style={{ margin: "8px 0px", background: "#e74c3c" }}
+        style={{ margin: "8px 0px", background: "#e74c3c"}}
         onClick={error}
       >
         Error
@@ -130,4 +130,8 @@ export const DisplayUser = () => {
 // Login form----------------------------------------------
 export const LoginForm = () => {
   return <UserLogin />;
+};
+
+export const AlternativeToast  = () => {
+  return <ToostAlternative />;
 };

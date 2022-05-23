@@ -134,7 +134,7 @@ export const UserLogin = () => {
   return (
     <div className={style.container} style={{ marginLeft: "48px" }}>
       <h1 style={{ textDecoration: "underline", fontSize: "1.8rem" }}>
-      Login Persistance
+        Login Persistance
       </h1>
       <p
         style={{
@@ -175,6 +175,76 @@ export const UserLogin = () => {
           LOGOUT
         </button>
       )}
+    </div>
+  );
+};
+
+// Alternative solution Toast
+export const ToostAlternative = () => {
+  const [count, setCount] = useState(0);
+
+  const msg = ["Toast Success ", "Toast Warn ", " Toast Info", "Toast Error"];
+
+
+  const fn = [
+    function success() {
+      toast.success("success", {
+        position: "top-center",
+      });
+
+      setCount(count + 1);
+    },
+
+    function warning() {
+      toast.warn("warning", {
+        position: "top-center",
+      });
+
+      setCount(count + 1);
+    },
+
+    function info() {
+      toast.info("info", {
+        position: "top-center",
+      });
+
+      setCount(count + 1);
+    },
+
+    function error() {
+      toast.error("error", {
+        position: "top-center",
+      });
+      if (count === 3) {
+        setCount(0);
+      }
+    },
+  ];
+
+  const color = () => {
+    if (count == 0) {
+      return "#07bc0c";
+    } else if (count == 1) {
+      return "#f1c40f";
+    } else if (count == 2) {
+      return "#ffffff";
+    } else {
+      return "#e74c3c";
+    }
+  };
+
+  return (
+    <div className={style.container}>
+      <h1 style={{ textDecoration: "underline", fontSize: "1.8rem" }}>
+        Toastify Alternative
+      </h1>
+      <button
+        className={style.btn}
+        style={{ margin: "8px 0px", background: color() }}
+        onClick={fn[count]}
+      >
+        {msg[count]}
+      </button>
     </div>
   );
 };

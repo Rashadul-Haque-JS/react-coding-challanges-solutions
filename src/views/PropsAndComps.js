@@ -15,6 +15,7 @@ const CompProps = () => {
         <FNCP.MsgToostify />
         <FNCP.DisplayUser />
         <FNCP.LoginForm/>
+        <FNCP.AlternativeToast/>
       </div>
     </div>
   );
