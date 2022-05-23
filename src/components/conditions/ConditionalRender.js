@@ -51,7 +51,7 @@ export const FruitsList = () => {
 // -------------------------------------------------------
 export const DevDiscover = () => {
   const [index, setIndex] = useState(null);
-  const [isTrue, setIsTrue] = useState(true);
+  let [isTrue, setIsTrue] = useState(true);
 
   const developer = ["FRONTEND DEVELOPER", "BACKEND DEVELOPER"];
 
@@ -85,10 +85,18 @@ export const DevDiscover = () => {
           {developer[index]}
         </p>
       )}
-
+      {isTrue &&
       <button className={style.btn} onClick={randomNum}>
-        CLICK TO KNOW
-      </button>
+      CLICK TO KNOW
+    </button>
+      }
+
+{!isTrue &&
+      <button className={style.btn} onClick={()=>setIsTrue(isTrue = true)}>
+      Refresh
+    </button>
+      }
+
     </div>
   );
 };
